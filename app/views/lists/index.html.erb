@@ -1,6 +1,13 @@
-<% @lists.each do |list| %>
-  <div class="container">
-    <%= link_to list.name, list_path(list) %>
-  </div>
-<% end %>
-<%= link_to 'Make a New List', new_list_path %>
+<div class="navbar px-4">
+  <h1>
+    Watch List
+  </h1>
+  <%= link_to 'Make a New List', new_list_path %>
+</div>
+<div class="container">
+  <% @lists.each do |list| %>
+    <div class="container">
+      <%= link_to list.name, list_path(list) %>
+    </div>
+  <% end %>
+</div>

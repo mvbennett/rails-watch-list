@@ -1,14 +1,17 @@
+<div class="container">
 <h1>
   <%= @list.name %>
 </h1>
 <ul>
-  <% @list.movies.each do |movie| %>
+  <% @list.bookmarks.each do |bookmark| %>
     <li>
+      <% movie = Movie.find(bookmark.movie_id) %>
       <%= movie.title %>
-      <%= link_to 'Delete', list_bookmark_path(@list, movie.bookmark_ids), method: :delete,
+      <%= link_to 'Delete', list_bookmark_path(@list, bookmark), method: :delete,
             data: { confirm: "Are you sure?" } %>
     </li>
   <% end %>
 </ul>
 <%= link_to 'Add A Bookmark', new_list_bookmark_path(@list) %>
 <%= link_to 'Return to Lists', lists_path %>
+</div>
