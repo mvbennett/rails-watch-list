@@ -10,3 +10,25 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.icon-trash:before {
+  content: "\e900";
+}
+
+.icon-bookmark:before {
+  content: "\e901";
+}
+
+.icon-home:before {
+  content: "\e902";
+}
+
+a {
+  text-decoration: none;
+}
+
+#main-banner {
+  background-image: image_url("macau_theater.jpg");
+  background-size: cover;
+  height: 30vh;
+}

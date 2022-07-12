@@ -1,8 +1,15 @@
+<div id="main-banner" class="jumbotron">
+  <h1>
+    Watch List
+  </h1>
+</div>
 <div class="navbar px-4">
   <h1>
     Watch List
   </h1>
-  <%= link_to 'Make a New List', new_list_path %>
+  <%= link_to new_list_path do %>
+    <span class="btn btn-secondary rounded">New List</span>
+  <% end %>
 </div>
 <div class="container">
   <% @lists.each do |list| %>
