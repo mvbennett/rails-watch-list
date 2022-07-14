@@ -13,7 +13,7 @@
   <div class="cards">
     <% @lists.each do |list| %>
       <% list.destroy if list.photo.key.nil? %>
-      <% if list.photo.key.attached? %>
+      <% unless list.photo.key.nil? %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
       <% else %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/300/200')">
