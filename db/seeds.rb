@@ -20,7 +20,8 @@ Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal masterm
 
 url = 'https://tmdb.lewagon.com/movie/top_rated'
 doc = URI.parse(url).open.read
-movies = JSON.parse(doc)
+movie_stuff = JSON.parse(doc)
+movies = movie_stuff[:results]
 movies.each do |movie|
   Movie.create(title: movie.title, overview: movie.overview, poster_url: movie.poster_url, rating: movie.vote_average)
 end
