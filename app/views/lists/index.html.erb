@@ -1,20 +1,21 @@
 <div id="main-banner" class="jumbotron">
-  <h1>
-    Watch List
-  </h1>
+  <%= image_tag('banner', id: 'banner-img') %>
 </div>
 <div class="navbar px-4">
-  <h1>
-    Watch List
-  </h1>
+  <%= link_to lists_path do %>
+    <%= image_tag('reel', size: '32x32', class: 'icon') %>
+  <% end %>
   <%= link_to new_list_path do %>
-    <span class="btn btn-secondary rounded">New List</span>
+    <span class="btn btn-secondary rounded">New Marquee</span>
   <% end %>
 </div>
 <div class="container">
-  <% @lists.each do |list| %>
-    <div class="container">
-      <%= link_to list.name, list_path(list) %>
-    </div>
-  <% end %>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <% list.destroy if list.photo.key.nil? %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
+        <%= link_to list.name, list_path(list) %>
+      </div>
+    <% end %>
+  </div>
 </div>

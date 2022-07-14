@@ -1,32 +1,37 @@
 <div class="navbar px-4">
   <%= link_to lists_path do %>
-    <span class="icon-home"></span>
+    <%= image_tag('reel', size: '32x32', class: 'icon') %>
   <% end %>
   <%= link_to new_list_path do %>
-    <span class="btn btn-secondary rounded">New List</span>
+    <span class="btn btn-secondary rounded">New Marquee</span>
   <% end %>
 </div>
 <div class="container">
 <h1>
   <%= @list.name %>
 </h1>
-<ul>
+<div class="cards">
   <% @list.bookmarks.each do |bookmark| %>
-    <li>
+    <div class="card-product">
       <% movie = Movie.find(bookmark.movie_id) %>
-      <%= movie.title %>
+      <img src="<%= movie.poster_url %>" alt="movie poster" class="poster">
+      <div class="card-product-infos">
+        <h2>
+          <%= movie.title %>
+        </h2>
+        <p>
+          <%= movie.overview %>
+        </p>
+        </div>
       <%= link_to list_bookmark_path(@list, bookmark), method: :delete,
             data: { confirm: "Are you sure?" } do %>
             <%# <i class="fa-regular fa-trash-can"></i> %>
-            <span class="icon-trash"></span>
+            <%= image_tag('delete', class: 'icon', size: '32x32') %>
       <% end %>
-    </li>
+    </div>
   <% end %>
-</ul>
+</div>
 <%= link_to new_list_bookmark_path(@list) do %>
-  <span class="icon-bookmark"></span>
-<% end %>
-<%= link_to lists_path do %>
-  <span class="icon-home"></span>
+  <%= image_tag('bookmark', class: 'icon') %>
 <% end %>
 </div>
