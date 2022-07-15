@@ -20,7 +20,7 @@
           <%= movie.title %>
         </h2>
         <p>
-          <%= movie.overview %>
+          <%= truncate(movie.overview, :length => 150) %>
         </p>
         </div>
       <%= link_to list_bookmark_path(@list, bookmark), method: :delete,

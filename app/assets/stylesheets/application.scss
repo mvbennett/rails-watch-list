@@ -37,6 +37,7 @@ a {
   justify-content: center;
   align-items: center;
   color: black;
+  text-shadow: 2px 2px rgba(61, 61, 61, 0.7);
 }
 
 #banner-img {
@@ -153,16 +154,25 @@ a {
   padding: 16px;
 }
 
-.card-category .icon {
-  position: relative;
-  left: 139px;
-  top: 63px;
-  opacity: 0;
+.card-product .icon {
+  opacity: 0.2;
 }
 
-.card-category .icon:hover {
+.card-product .icon:hover {
   opacity: 0.9;
+  transition: 1s;
 }
+
+// .card-category .icon {
+//   position: relative;
+//   left: 139px;
+//   top: 63px;
+//   opacity: 0;
+// }
+
+// .card-category .icon:hover {
+//   opacity: 0.9;
+// }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
