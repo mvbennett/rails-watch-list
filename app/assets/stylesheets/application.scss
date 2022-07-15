@@ -153,6 +153,16 @@ a {
   padding: 16px;
 }
 
+.card-category .icon {
+  position: relative;
+  left: 139px;
+  top: 63px;
+  opacity: 0;
+}
+
+.card-category .icon:hover {
+  opacity: 0.9;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
